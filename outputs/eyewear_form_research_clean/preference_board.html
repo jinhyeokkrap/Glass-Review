@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Clean Eyewear Front Board</title>
+<style>
+body{margin:0;background:#f4f5f2;color:#171918;font-family:Arial,'Noto Sans KR',sans-serif}
+header{position:sticky;top:0;background:rgba(244,245,242,.94);backdrop-filter:blur(10px);border-bottom:1px solid #d6dbd2;padding:14px 18px;display:flex;justify-content:space-between;gap:12px;align-items:center}
+h1{font-size:18px;margin:0} input,button{height:34px;border:1px solid #aeb8ad;background:#fff;border-radius:6px;padding:0 10px}
+main{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;padding:16px}
+.card{position:relative;background:white;border:1px solid #d9ded6;border-radius:8px;overflow:hidden}
+.card img{width:100%;aspect-ratio:1.35/1;object-fit:contain;background:#fafbf9;border-bottom:1px solid #e4e8e1;display:block}
+.meta{padding:10px 12px 12px} h2{font-size:15px;margin:4px 0 2px} p{margin:0;font-size:13px} small{display:block;margin-top:6px;color:#626c60} a{display:inline-block;margin-top:8px;color:#245b7a;font-size:12px}
+.pick{position:absolute;top:8px;right:8px} .selected{outline:3px solid #20251f} .selected .pick{background:#20251f;color:white}
+.hidden{display:none}
+</style></head><body>
+<header><h1>Clean Eyewear Front Board</h1><div><input id="q" placeholder="filter"><button id="picked">Picked only</button></div></header>
+<main>
+      <article class="card">
+        <button class="pick" type="button">Pick</button>
+        <img src="images/01_ray_ban_wayfarer_ease_optics_rb4340v.jpg" alt="Ray-Ban Wayfarer Ease Optics RB4340V">
+        <div class="meta">
+          <span>01</span>
+          <h2>Ray-Ban</h2>
+          <p>Wayfarer Ease Optics RB4340V</p>
+          <small>classic thick square acetate</small>
+          <a href="https://www.ray-ban.com/usa/eyeglasses/RX4340V%20UNISEX%20wayfarer%20ease%20optics-black/8053672808469" target="_blank" rel="noreferrer">source</a>
+        </div>
+      </article>
+      <article class="card">
+        <button class="pick" type="button">Pick</button>
+        <img src="images/02_ray_ban_clubmaster_optics_rx5154.jpg" alt="Ray-Ban Clubmaster Optics RX5154">
+        <div class="meta">
+          <span>02</span>
+          <h2>Ray-Ban</h2>
+          <p>Clubmaster Optics RX5154</p>
+          <small>browline combination</small>
+          <a href="https://www.ray-ban.com/usa/eyeglasses/RX5154%20UNISEX%20clubmaster%20optics-polished%20black/805289270102" target="_blank" rel="noreferrer">source</a>
+        </div>
+      </article>
+      <article class="card">
+        <button class="pick" type="button">Pick</button>
+        <img src="images/03_oakley_holbrook_low_bridge_fit_ox8100f.jpg" alt="Oakley Holbrook Low Bridge Fit OX8100F">
+        <div class="meta">
+          <span>03</span>
+          <h2>Oakley</h2>
+          <p>Holbrook Low Bridge Fit OX8100F</p>
+          <small>sport square full-rim</small>
+          <a href="https://www.oakley.com/en-us/product/W0OX8100F?variant=888392603012" target="_blank" rel="noreferrer">source</a>
+        </div>
+      </article>
+      <article class="card">
+        <button class="pick" type="button">Pick</button>
+        <img src="images/04_gentle_monster_zin_01.jpg" alt="Gentle Monster Zin 01">
+        <div class="meta">
+          <span>04</span>
+          <h2>Gentle Monster</h2>
+          <p>Zin 01</p>
+          <small>minimal square</small>
+          <a href="https://www.gentlemonster.com/kr/ja/item/ZYYE799SURVC/zin01" target="_blank" rel="noreferrer">source</a>
+        </div>
+      </article>
+      <article class="card">
+        <button class="pick" type="button">Pick</button>
+        <img src="images/05_gentle_monster_alio_gd1.jpg" alt="Gentle Monster Alio GD1">
+        <div class="meta">
+          <span>05</span>
+          <h2>Gentle Monster</h2>
+          <p>Alio GD1</p>
+          <small>combination square</small>
+          <a href="https://www.gentlemonster.com/kr/ja/item/194RVEG6I7XGB/aliogd1" target="_blank" rel="noreferrer">source</a>
+        </div>
+      </article>
+      <article class="card">
+        <button class="pick" type="button">Pick</button>
+        <img src="images/06_gentle_monster_ojo_01.jpg" alt="Gentle Monster Ojo 01">
+        <div class="meta">
+          <span>06</span>
+          <h2>Gentle Monster</h2>
+          <p>Ojo 01</p>
+          <small>soft square acetate</small>
+          <a href="https://www.gentlemonster.com/cn/zh-CN/item/SDFZSB9VJ282/ojo01" target="_blank" rel="noreferrer">source</a>
+        </div>
+      </article>
+      <article class="card">
+        <button class="pick" type="button">Pick</button>
+        <img src="images/07_moscot_lemtosh.jpg" alt="MOSCOT LEMTOSH">
+        <div class="meta">
+          <span>07</span>
+          <h2>MOSCOT</h2>
+          <p>LEMTOSH</p>
+          <small>keyhole rounded square acetate</small>
+          <a href="https://moscot.com/products/lemtosh" target="_blank" rel="noreferrer">source</a>
+        </div>
+      </article>
+      <article class="card">
+        <button class="pick" type="button">Pick</button>
+        <img src="images/08_moscot_miltzen.jpg" alt="MOSCOT MILTZEN">
+        <div class="meta">
+          <span>08</span>
+          <h2>MOSCOT</h2>
+          <p>MILTZEN</p>
+          <small>round keyhole acetate</small>
+          <a href="https://moscot.com/products/miltzen" target="_blank" rel="noreferrer">source</a>
+        </div>
+      </article>
+      <article class="card">
+        <button class="pick" type="button">Pick</button>
+        <img src="images/09_moscot_zev.jpg" alt="MOSCOT ZEV">
+        <div class="meta">
+          <span>09</span>
+          <h2>MOSCOT</h2>
+          <p>ZEV</p>
+          <small>round metal</small>
+          <a href="https://moscot.com/products/zev" target="_blank" rel="noreferrer">source</a>
+        </div>
+      </article>
+      <article class="card">
+        <button class="pick" type="button">Pick</button>
+        <img src="images/10_moscot_dahven.jpg" alt="MOSCOT DAHVEN">
+        <div class="meta">
+          <span>10</span>
+          <h2>MOSCOT</h2>
+          <p>DAHVEN</p>
+          <small>bold square acetate</small>
+          <a href="https://moscot.com/products/dahven" target="_blank" rel="noreferrer">source</a>
+        </div>
+      </article>
+      <article class="card">
+        <button class="pick" type="button">Pick</button>
+        <img src="images/11_moscot_nebb.jpg" alt="MOSCOT NEBB">
+        <div class="meta">
+          <span>11</span>
+          <h2>MOSCOT</h2>
+          <p>NEBB</p>
+          <small>rectangular acetate</small>
+          <a href="https://moscot.com/products/nebb" target="_blank" rel="noreferrer">source</a>
+        </div>
+      </article>
+      <article class="card">
+        <button class="pick" type="button">Pick</button>
+        <img src="images/12_moscot_yontif.jpg" alt="MOSCOT YONTIF">
+        <div class="meta">
+          <span>12</span>
+          <h2>MOSCOT</h2>
+          <p>YONTIF</p>
+          <small>round panto acetate</small>
+          <a href="https://moscot.com/products/yontif" target="_blank" rel="noreferrer">source</a>
+        </div>
+      </article>
+      <article class="card">
+        <button class="pick" type="button">Pick</button>
+        <img src="images/13_moscot_maydela.jpg" alt="MOSCOT MAYDELA">
+        <div class="meta">
+          <span>13</span>
+          <h2>MOSCOT</h2>
+          <p>MAYDELA</p>
+          <small>soft square acetate</small>
+          <a href="https://moscot.com/products/maydela" target="_blank" rel="noreferrer">source</a>
+        </div>
+      </article>
+      <article class="card">
+        <button class="pick" type="button">Pick</button>
+        <img src="images/14_moscot_zolman.jpg" alt="MOSCOT ZOLMAN">
+        <div class="meta">
+          <span>14</span>
+          <h2>MOSCOT</h2>
+          <p>ZOLMAN</p>
+          <small>round bold acetate</small>
+          <a href="https://moscot.com/products/zolman" target="_blank" rel="noreferrer">source</a>
+        </div>
+      </article>
+      <article class="card">
+        <button class="pick" type="button">Pick</button>
+        <img src="images/15_moscot_shtarker.jpg" alt="MOSCOT SHTARKER">
+        <div class="meta">
+          <span>15</span>
+          <h2>MOSCOT</h2>
+          <p>SHTARKER</p>
+          <small>rectangular keyhole acetate</small>
+          <a href="https://moscot.com/products/shtarker" target="_blank" rel="noreferrer">source</a>
+        </div>
+      </article>
+      <article class="card">
+        <button class="pick" type="button">Pick</button>
+        <img src="images/16_moscot_yukel.jpg" alt="MOSCOT YUKEL">
+        <div class="meta">
+          <span>16</span>
+          <h2>MOSCOT</h2>
+          <p>YUKEL</p>
+          <small>browline combination</small>
+          <a href="https://moscot.com/products/yukel" target="_blank" rel="noreferrer">source</a>
+        </div>
+      </article></main>
+<script>
+const cards=[...document.querySelectorAll('.card')], q=document.querySelector('#q'), picked=document.querySelector('#picked'); let only=false;
+cards.forEach(c=>c.querySelector('.pick').onclick=()=>c.classList.toggle('selected'));
+function apply(){const s=q.value.toLowerCase(); cards.forEach(c=>c.classList.toggle('hidden',(!c.innerText.toLowerCase().includes(s))||(only&&!c.classList.contains('selected'))));}
+q.oninput=apply; picked.onclick=()=>{only=!only; picked.textContent=only?'Show all':'Picked only'; apply();};
+</script></body></html>

@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Eyewear Form Preference Board</title>
+  <style>
+    :root {
+      color-scheme: light;
+      font-family: Arial, "Noto Sans KR", sans-serif;
+      background: #f6f7f4;
+      color: #181a1b;
+    }
+    body { margin: 0; }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 22px;
+      background: rgba(246, 247, 244, .94);
+      border-bottom: 1px solid #d9ddd6;
+      backdrop-filter: blur(10px);
+    }
+    h1 { margin: 0; font-size: 18px; font-weight: 700; letter-spacing: 0; }
+    .tools { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+    input, button {
+      height: 36px;
+      border: 1px solid #bfc7bd;
+      background: white;
+      border-radius: 6px;
+      padding: 0 10px;
+      font-size: 13px;
+    }
+    button { cursor: pointer; }
+    main {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+      gap: 14px;
+      padding: 18px;
+    }
+    .card {
+      position: relative;
+      background: white;
+      border: 1px solid #d8ddd5;
+      border-radius: 8px;
+      overflow: hidden;
+      min-height: 316px;
+    }
+    .card img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1.28 / 1;
+      object-fit: contain;
+      background: #f4f5f3;
+      border-bottom: 1px solid #e4e7e2;
+    }
+    .meta { padding: 10px 12px 12px; }
+    .num { color: #738071; font-size: 12px; }
+    h2 { margin: 4px 0 2px; font-size: 15px; line-height: 1.2; }
+    p { margin: 0; }
+    .model { font-size: 13px; line-height: 1.35; }
+    .form { margin-top: 6px; color: #657062; font-size: 12px; line-height: 1.35; }
+    a { display: inline-block; margin-top: 8px; color: #245b7a; font-size: 12px; }
+    .pick {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      height: 30px;
+      border-color: #9aa79a;
+      background: rgba(255, 255, 255, .92);
+    }
+    .card.selected { outline: 3px solid #252b26; }
+    .card.selected .pick { background: #252b26; color: white; }
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Eyewear Form Preference Board</h1>
+    <div class="tools">
+      <input id="filter" type="search" placeholder="brand / model / form">
+      <button id="showPicked" type="button">Picked only</button>
+      <button id="export" type="button">Export picks</button>
+    </div>
+  </header>
+  <main>
+    
+      <article class="card" data-brand="Oakley" data-form="sport square acetate">
+        <button class="pick" type="button" aria-label="pick">Pick</button>
+        <img src="images/06_oakley_holbrook_rx.jpg" alt="Oakley Holbrook RX">
+        <div class="meta">
+          <span class="num">01</span>
+          <h2>Oakley</h2>
+          <p class="model">Holbrook RX</p>
+          <p class="form">sport square acetate</p>
+          <a href="https://www.oakley.com/en-pt/product/W0OO9437" target="_blank" rel="noreferrer">source</a>
+        </div>
+      </article>
+      <article class="card" data-brand="Oakley" data-form="round mixed material">
+        <button class="pick" type="button" aria-label="pick">Pick</button>
+        <img src="images/07_oakley_pitchman_r.jpg" alt="Oakley Pitchman R">
+        <div class="meta">
+          <span class="num">02</span>
+          <h2>Oakley</h2>
+          <p class="model">Pitchman R</p>
+          <p class="form">round mixed material</p>
+          <a href="https://www.oakley.com/en-us/product/W0OO9510" target="_blank" rel="noreferrer">source</a>
+        </div>
+      </article>
+      <article class="card" data-brand="Oakley" data-form="soft rectangular">
+        <button class="pick" type="button" aria-label="pick">Pick</button>
+        <img src="images/08_oakley_centerboard.jpg" alt="Oakley Centerboard">
+        <div class="meta">
+          <span class="num">03</span>
+          <h2>Oakley</h2>
+          <p class="model">Centerboard</p>
+          <p class="form">soft rectangular</p>
+          <a href="https://www.oakley.com/en-gb/product/W0OW8001" target="_blank" rel="noreferrer">source</a>
+        </div>
+      </article>
+      <article class="card" data-brand="Oakley" data-form="semi rimless performance">
+        <button class="pick" type="button" aria-label="pick">Pick</button>
+        <img src="images/09_oakley_socket_5_5.jpg" alt="Oakley Socket 5.5">
+        <div class="meta">
+          <span class="num">04</span>
+          <h2>Oakley</h2>
+          <p class="model">Socket 5.5</p>
+          <p class="form">semi rimless performance</p>
+          <a href="https://www.oakley.com/en-us/product/W0OO9242" target="_blank" rel="noreferrer">source</a>
+        </div>
+      </article>
+      <article class="card" data-brand="Oakley" data-form="rectangular sport">
+        <button class="pick" type="button" aria-label="pick">Pick</button>
+        <img src="images/10_oakley_plank_2_0.jpg" alt="Oakley Plank 2.0">
+        <div class="meta">
+          <span class="num">05</span>
+          <h2>Oakley</h2>
+          <p class="model">Plank 2.0</p>
+          <p class="form">rectangular sport</p>
+          <a href="https://www.oakley.com/en-au/product/W0OW8001" target="_blank" rel="noreferrer">source</a>
+        </div>
+      </article>
+      <article class="card" data-brand="Gentle Monster" data-form="minimal square">
+        <button class="pick" type="button" aria-label="pick">Pick</button>
+        <img src="images/27_gentle_monster_zin_01.jpg" alt="Gentle Monster Zin 01">
+        <div class="meta">
+          <span class="num">06</span>
+          <h2>Gentle Monster</h2>
+          <p class="model">Zin 01</p>
+          <p class="form">minimal square</p>
+          <a href="https://www.gentlemonster.com/cn/zh-CN/item/SDFZSB9VJ282/ojo01" target="_blank" rel="noreferrer">source</a>
+        </div>
+      </article>
+      <article class="card" data-brand="Gentle Monster" data-form="combination square">
+        <button class="pick" type="button" aria-label="pick">Pick</button>
+        <img src="images/28_gentle_monster_alio_gd1.jpg" alt="Gentle Monster Alio GD1">
+        <div class="meta">
+          <span class="num">07</span>
+          <h2>Gentle Monster</h2>
+          <p class="model">Alio GD1</p>
+          <p class="form">combination square</p>
+          <a href="https://www.gentlemonster.com/cn/zh-CN/stories/2025-bold-collection" target="_blank" rel="noreferrer">source</a>
+        </div>
+      </article>
+      <article class="card" data-brand="Gentle Monster" data-form="bold rectangular">
+        <button class="pick" type="button" aria-label="pick">Pick</button>
+        <img src="images/29_gentle_monster_jade_01.jpg" alt="Gentle Monster Jade 01">
+        <div class="meta">
+          <span class="num">08</span>
+          <h2>Gentle Monster</h2>
+          <p class="model">Jade 01</p>
+          <p class="form">bold rectangular</p>
+          <a href="https://www.gentlemonster.com/us/en/item/MZ8998WXRENN/matiny01" target="_blank" rel="noreferrer">source</a>
+        </div>
+      </article>
+      <article class="card" data-brand="Gentle Monster" data-form="oversized square">
+        <button class="pick" type="button" aria-label="pick">Pick</button>
+        <img src="images/30_gentle_monster_mondo_01.jpg" alt="Gentle Monster Mondo 01">
+        <div class="meta">
+          <span class="num">09</span>
+          <h2>Gentle Monster</h2>
+          <p class="model">Mondo 01</p>
+          <p class="form">oversized square</p>
+          <a href="https://www.gentlemonster.com/kr/ja" target="_blank" rel="noreferrer">source</a>
+        </div>
+      </article>
+      <article class="card" data-brand="Prada" data-form="bold square acetate">
+        <button class="pick" type="button" aria-label="pick">Pick</button>
+        <img src="images/56_prada_pr_17wv.jpg" alt="Prada PR 17WV">
+        <div class="meta">
+          <span class="num">10</span>
+          <h2>Prada</h2>
+          <p class="model">PR 17WV</p>
+          <p class="form">bold square acetate</p>
+          <a href="https://www.prada.com/us/en/womens/essentials/c/10100US" target="_blank" rel="noreferrer">source</a>
+        </div>
+      </article>
+      <article class="card" data-brand="Prada" data-form="modern rectangular">
+        <button class="pick" type="button" aria-label="pick">Pick</button>
+        <img src="images/57_prada_pr_a01v.jpg" alt="Prada PR A01V">
+        <div class="meta">
+          <span class="num">11</span>
+          <h2>Prada</h2>
+          <p class="model">PR A01V</p>
+          <p class="form">modern rectangular</p>
+          <a href="https://www.prada.com/mc/en/pradasphere/fragrances/paradoxe.html" target="_blank" rel="noreferrer">source</a>
+        </div>
+      </article>
+      <article class="card" data-brand="Prada" data-form="minimal rectangle">
+        <button class="pick" type="button" aria-label="pick">Pick</button>
+        <img src="images/58_prada_pr_16mv.jpg" alt="Prada PR 16MV">
+        <div class="meta">
+          <span class="num">12</span>
+          <h2>Prada</h2>
+          <p class="model">PR 16MV</p>
+          <p class="form">minimal rectangle</p>
+          <a href="https://www.prada.com/us/en/womens/essentials/c/10100US" target="_blank" rel="noreferrer">source</a>
+        </div>
+      </article>
+  </main>
+  <script>
+    const cards = Array.from(document.querySelectorAll('.card'));
+    const filter = document.querySelector('#filter');
+    const showPicked = document.querySelector('#showPicked');
+    let pickedOnly = false;
+    cards.forEach(card => card.querySelector('.pick').addEventListener('click', () => card.classList.toggle('selected')));
+    function applyFilter() {
+      const q = filter.value.trim().toLowerCase();
+      cards.forEach(card => {
+        const text = card.innerText.toLowerCase() + ' ' + card.dataset.brand.toLowerCase() + ' ' + card.dataset.form.toLowerCase();
+        const visible = (!q || text.includes(q)) && (!pickedOnly || card.classList.contains('selected'));
+        card.classList.toggle('hidden', !visible);
+      });
+    }
+    filter.addEventListener('input', applyFilter);
+    showPicked.addEventListener('click', () => {
+      pickedOnly = !pickedOnly;
+      showPicked.textContent = pickedOnly ? 'Show all' : 'Picked only';
+      applyFilter();
+    });
+    document.querySelector('#export').addEventListener('click', () => {
+      const rows = cards.filter(c => c.classList.contains('selected')).map(c => {
+        const bits = Array.from(c.querySelectorAll('h2,.model,.form,a')).map(el => el.textContent.trim());
+        return bits.join(',');
+      });
+      const blob = new Blob([rows.join('\n')], {type: 'text/csv'});
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'selected_eyewear_forms.csv';
+      a.click();
+    });
+  </script>
+</body>
+</html>

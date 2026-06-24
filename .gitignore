@@ -1,0 +1,5 @@
+.agents/
+.codex/
+*.tmp
+*.log
+__pycache__/
