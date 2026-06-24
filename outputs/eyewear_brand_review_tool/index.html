@@ -277,6 +277,29 @@
     function save() {
       localStorage.setItem(STORE_KEY, JSON.stringify(state));
     }
+    function hasMeaningfulState(value) {
+      return Object.values(value || {}).some(row =>
+        row && (
+          row.verdict ||
+          Number(row.rating || 0) ||
+          (row.tags || []).length ||
+          row.note
+        )
+      );
+    }
+    async function loadDefaultReviewState() {
+      if (hasMeaningfulState(state)) return;
+      try {
+        const response = await fetch("review_state.json", { cache: "no-store" });
+        if (!response.ok) return;
+        const imported = normalizeImportedReview(await response.json());
+        if (!Object.keys(imported).length) return;
+        state = imported;
+        save();
+      } catch (error) {
+        console.info("No default review state loaded.", error);
+      }
+    }
     function reviewOf(id) {
       if (!state[id]) state[id] = { verdict: "", rating: 0, tags: [], note: "" };
       return state[id];
@@ -592,7 +615,7 @@
       if (e.key.toLowerCase() === "h") setVerdict(selectedId, "hold");
       if (e.key.toLowerCase() === "r") setVerdict(selectedId, "reject");
     });
-    render();
+    loadDefaultReviewState().finally(render);
   </script>
 </body>
 </html>
