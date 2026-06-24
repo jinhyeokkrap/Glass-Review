@@ -7,6 +7,7 @@ AI glasses product-design research workspace for reviewing front-view eyewear fo
 - Date: 2026-06-24
 - Images: 452
 - Brands: 42
+- Website: `https://jinhyeokkrap.github.io/Glass-Review/`
 - Review tool: `outputs/eyewear_brand_review_tool/index.html`
 - Brand folders: `outputs/eyewear_form_research_300_by_brand/`
 - Status summary: `outputs/eyewear_collection_status_2026-06-24.md`
